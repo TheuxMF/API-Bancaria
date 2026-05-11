@@ -1,8 +1,11 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
+
+from dependencies import check_token
 
 transactions_router = APIRouter(
     prefix="/transactions",
-    tags=["transactions"]
+    tags=["transactions"],
+    dependencies=[Depends(check_token)]
 )
 
 @transactions_router.post("/deposit")

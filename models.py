@@ -34,7 +34,7 @@ class Account(Base):
     user_id = Column("user_id" ,ForeignKey("users.id"))
     balance = Column(Float, default=0.0)
     type_account = Column("type_account", String) # ("Conta Corrente", "Conta Poupança", "Conta Salario")
-    transactions = relationship("Transaction", back_populates="account", cascade="all, delete")
+    transactions = relationship("Transaction", cascade="all, delete")
     created_at = Column("created_at", DateTime, default=lambda: datetime.now(timezone.utc))
 
 
