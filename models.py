@@ -38,8 +38,7 @@ class Account(Base):
     created_at = Column("created_at", DateTime, default=lambda: datetime.now(timezone.utc))
 
 
-    def __init__(self, balance,type_account):
-        self.balance = balance
+    def __init__(self, type_account):
         self.type_account = type_account
 
 class Transaction(Base):

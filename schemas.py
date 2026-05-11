@@ -14,8 +14,14 @@ class UserSchema(BaseModel):
 
 
 class LoginSchema(BaseModel):
-    email: str
+    cpf: str
     password: str
 
     class config:
         from_attributes = True     
+
+class AccountSchema(BaseModel):
+    type_account: str
+
+    class config:
+        from_attributes = True
